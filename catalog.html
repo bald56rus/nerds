@@ -12,104 +12,123 @@
 <body>
   <header class="header">
     <div class="container">
-      <section class="header-top">
-        <a href="index.html" class="header__logo">
-          <img src="img/logo.svg" width="160" height="65" alt="Логотип">
-        </a>
-        <ul class="header-menu catalog-filter__options">
-          <li class="header-menu__item">
-            <a href="#" class="header-menu__link">Студия</a>
-          </li>
-          <li class="header-menu__item">
-            <a href="#" class="header-menu__link">Клиенты</a>
-          </li>
-          <li class="header-menu__item">
-            <a href="catalog.html" class="header-menu__link">Магазин</a>
-          </li>
-          <li class="header-menu__item">
-            <a href="#" class="header-menu__link">Контакты</a>
-          </li>
-        </ul>
-        <a href="cart.html" class="header__cart">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon-cart" width="15" height="15" viewBox="0 0 15 15">
-            <circle cx="4.5" cy="13.5" r="1.5" />
-            <circle cx="12.5" cy="13.5" r="1.5" />
-            <path d="M15 2H4.07l-.422-2H0v2h2.031l1.985 9H15V9H9.441L15 6.951z" />
-          </svg>
-          Корзина
-        </a>
-      </section>
-      <h3 class="header__title">Магазин готовых шаблонов</h3>
+      <a href="index.html" class="header__logo">
+        <img src="img/logo.svg" width="160" height="65" alt="Логотип">
+      </a>
+      <ul class="header-menu">
+        <li class="header-menu__item">
+          <a href="#" class="header-menu__link">Студия</a>
+        </li>
+        <li class="header-menu__item">
+          <a href="#" class="header-menu__link">Клиенты</a>
+        </li>
+        <li class="header-menu__item">
+          <a href="catalog.html" class="header-menu__link">Магазин</a>
+        </li>
+        <li class="header-menu__item">
+          <a href="#" class="header-menu__link">Контакты</a>
+        </li>
+      </ul>
+      <a href="cart.html" class="header__cart">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon-cart" width="15" height="15" viewBox="0 0 15 15">
+          <circle cx="4.5" cy="13.5" r="1.5" />
+          <circle cx="12.5" cy="13.5" r="1.5" />
+          <path d="M15 2H4.07l-.422-2H0v2h2.031l1.985 9H15V9H9.441L15 6.951z" />
+        </svg>
+        Корзина
+      </a>
     </div>
   </header>
   <main>
+    <section class="page-header">
+      <h1 class="page-header__title">Магазин готовых шаблонов</h1>
+    </section>
     <div class="container catalog">
       <aside class="catalog-sidebar">
         <form class="catalog-filter" action="https://echo.htmlacademy.ru" method="post">
-          <fieldset class="catalog-filter__group">
-            <legend class="catalog-filter__title">Стоимость:</legend>
+          <fieldset class="filter__group">
+            <legend class="filter__title">Стоимость:</legend>
+            <div class="range">
+              <div class="range-controls">
+                <div class="range__scale">
+                  <div class="range__bar"></div>
+                  <div class="range__toggle range__toggle--min"></div>
+                  <div class="range__toggle range__toggle--max"></div>
+                </div>
+              </div>
+              <div class="range__outputs">
+                <div class="range__output--min">
+                  <label for="range__input-min" class="range__label">От</label>
+                  <input type="text" class="range__input" id="range__input-min" value="0">
+                </div>
+                <div class="range__output--min">
+                  <label for="range__input-max" class="range__label">До</label>
+                  <input type="text" class="range__input" id="range__input-max" value="15000">
+                </div>
+              </div>
+            </div>
           </fieldset>
-          <fieldset class="catalog-filter__group">
-            <legend class="catalog-filter__title">Сетка:</legend>
-            <ul class="catalog-filter__options">
-              <li class="catalog-filter__option">
-                <input class="catalog-filter__input" type="radio" name="layout" value="adaptive" id="adaptive-layout" checked>
-                <label class="catalog-filter__label catalog-filter__label-radio" for="adaptive-layout">Адаптивная</label>
+          <fieldset class="filter__group filter__layouts">
+            <legend class="filter__title">Сетка:</legend>
+            <ul class="filter__options">
+              <li class="filter__option">
+                <input class="filter__input" type="radio" name="layout" value="adaptive" id="adaptive-layout" checked>
+                <label class="filter__label filter__label--radio" for="adaptive-layout">Адаптивная</label>
               </li>
-              <li class="catalog-filter__option">
-                <input class="catalog-filter__input" type="radio" name="layout" value="fixed" id="fixed-layout">
-                <label class="catalog-filter__label catalog-filter__label-radio" for="fixed-layout">Фиксированная</label>
+              <li class="filter__option">
+                <input class="filter__input" type="radio" name="layout" value="fixed" id="fixed-layout">
+                <label class="filter__label filter__label--radio" for="fixed-layout">Фиксированная</label>
               </li>
-              <li class="catalog-filter__option">
-                <input class="catalog-filter__input" type="radio" name="layout" value="rubber" id="rubber-layout">
-                <label class="catalog-filter__label catalog-filter__label-radio" for="rubber-layout">Резиновая</label>
+              <li class="filter__option">
+                <input class="filter__input" type="radio" name="layout" value="rubber" id="rubber-layout">
+                <label class="filter__label filter__label--radio" for="rubber-layout">Резиновая</label>
               </li>
             </ul>
           </fieldset>
-          <fieldset class="catalog-filter__group">
-            <legend class="catalog-filter__title">Особенности:</legend>
-            <ul class="catalog-filter__options">
-              <li class="catalog-filter__option">
-                <input class="catalog-filter__input" type="checkbox" name="slider" value="slider" id="slider-feature" checked>
-                <label class="catalog-filter__label catalog-filter__label-checkbox" for="slider-feature">Слайдер</label>
+          <fieldset class="filter__group filter__features">
+            <legend class="filter__title">Особенности:</legend>
+            <ul class="filter__options">
+              <li class="filter__option">
+                <input class="filter__input" type="checkbox" name="slider" value="slider" id="slider-feature" checked>
+                <label class="filter__label filter__label--checkbox" for="slider-feature">Слайдер</label>
               </li>
-              <li class="catalog-filter__option">
-                <input class="catalog-filter__input" type="checkbox" name="advantages" value="advantages" id="advantages-feature">
-                <label class="catalog-filter__label catalog-filter__label-checkbox" for="advantages-feature">Блок преимуществ</label>
+              <li class="filter__option">
+                <input class="filter__input" type="checkbox" name="advantages" value="advantages" id="advantages-feature">
+                <label class="filter__label filter__label--checkbox" for="advantages-feature">Блок преимуществ</label>
               </li>
-              <li class="catalog-filter__option">
-                <input class="catalog-filter__input" type="checkbox" name="news" value="news" id="news-feature" checked>
-                <label class="catalog-filter__label catalog-filter__label-checkbox" for="news-feature">Новости</label>
+              <li class="filter__option">
+                <input class="filter__input" type="checkbox" name="news" value="news" id="news-feature" checked>
+                <label class="filter__label filter__label--checkbox" for="news-feature">Новости</label>
               </li>
-              <li class="catalog-filter__option">
-                <input class="catalog-filter__input" type="checkbox" name="gallery" value="gallery" id="gallery-feature">
-                <label class="catalog-filter__label catalog-filter__label-checkbox" for="gallery-feature">Галерея</label>
+              <li class="filter__option">
+                <input class="filter__input" type="checkbox" name="gallery" value="gallery" id="gallery-feature">
+                <label class="filter__label filter__label--checkbox" for="gallery-feature">Галерея</label>
               </li>
-              <li class="catalog-filter__option">
-                <input class="catalog-filter__input" type="checkbox" name="cart" value="cart" id="cart-feature">
-                <label class="catalog-filter__label catalog-filter__label-checkbox" for="cart-feature">Корзина</label>
+              <li class="filter__option">
+                <input class="filter__input" type="checkbox" name="cart" value="cart" id="cart-feature">
+                <label class="filter__label filter__label--checkbox" for="cart-feature">Корзина</label>
               </li>
             </ul>
           </fieldset>
-          <button type="submit" class="catalog-filter__button">Показать</button>
+          <button type="submit" class="filter__submit">Показать</button>
         </form>
       </aside>
       <section class="catalog-section">
         <div class="catalog-section__header">
-          <h3 class="catalog-section__header-title">Сортировка</h3>
-          <ul class="catalog__sort-options">
-            <li class="catalog__sort-option">По цене</li>
-            <li class="catalog__sort-option">По типу</li>
-            <li class="catalog__sort-option">По названию</li>
+          <h3 class="catalog-section__header-title">Сортировать</h3>
+          <ul class="sort-options">
+            <li class="sort-option">По цене</li>
+            <li class="sort-option">По типу</li>
+            <li class="sort-option">По названию</li>
           </ul>
-          <ul class="catalog__sort-order-options">
-            <li class="catalog__sort-order-option">
-              <svg xmlns="http://www.w3.org/2000/svg" class="catalog__sort-icon" width="11" height="10" viewBox="0 0 11 10">
+          <ul class="sort-order-options">
+            <li class="sort-order-option">
+              <svg xmlns="http://www.w3.org/2000/svg" class="sort-icon" width="11" height="10" viewBox="0 0 11 10">
                 <path d="M5.5 10L0 0h11" />
               </svg>
             </li>
-            <li class="catalog__sort-order-option">
-              <svg xmlns="http://www.w3.org/2000/svg" class="catalog__sort-icon" width="11" height="10" viewBox="0 0 11 10">
+            <li class="sort-order-option">
+              <svg xmlns="http://www.w3.org/2000/svg" class="sort-icon" width="11" height="10" viewBox="0 0 11 10">
                 <path d="M5.5 0L0 10h11z" />
               </svg>
             </li>
@@ -127,7 +146,7 @@
             <div class="catalog__item-detail">
               <h3 class="catalog__item-title">Sedona</h3>
               <p class="catalog__item-description">Информационный сайт для туристов</p>
-              <p class="catalog__item-price">9 900 р.</p>
+              <a href="#" class="catalog__item-price">9 900 р.</a>
             </div>
           </li>
           <li class="catalog__item">
@@ -141,7 +160,7 @@
             <div class="catalog__item-detail">
               <h3 class="catalog__item-title">Pink app</h3>
               <p class="catalog__item-description">Продуктовый лендинг приложения для IOS и Android</p>
-              <p class="catalog__item-price">9 900 р.</p>
+              <a href="#" class="catalog__item-price">9 900 р.</a>
             </div>
           </li>
           <li class="catalog__item">
@@ -155,7 +174,7 @@
             <div class="catalog__item-detail">
               <h3 class="catalog__item-title">Barbershop</h3>
               <p class="catalog__item-description">Сайт салона крастоы. Для мужчин, да.</p>
-              <p class="catalog__item-price">9 900 р.</p>
+              <a href="#" class="catalog__item-price">9 900 р.</a>
             </div>
           </li>
           <li class="catalog__item">
@@ -169,7 +188,7 @@
             <div class="catalog__item-detail">
               <h3 class="catalog__item-title">Mishka</h3>
               <p class="catalog__item-description">Интернет магазин вязанных игрушек</p>
-              <p class="catalog__item-price">9 900 р.</p>
+              <a href="#" class="catalog__item-price">9 900 р.</a>
             </div>
           </li>
           <li class="catalog__item">
@@ -183,7 +202,7 @@
             <div class="catalog__item-detail">
               <h3 class="catalog__item-title">A plus</h3>
               <p class="catalog__item-description">Лендинг курсов повышения квалификации</p>
-              <p class="catalog__item-price">9 900 р.</p>
+              <a href="#" class="catalog__item-price">9 900 р.</a>
             </div>
           </li>
           <li class="catalog__item">
@@ -197,7 +216,7 @@
             <div class="catalog__item-detail">
               <h3 class="catalog__item-title">Кваст</h3>
               <p class="catalog__item-description">Промо сайт производителя крафтового кваса.</p>
-              <p class="catalog__item-price">9 900 р.</p>
+              <a href="#" class="catalog__item-price">9 900 р.</a>
             </div>
           </li>
         </ul>
@@ -212,7 +231,7 @@
             <a href="#" class="catalog-pagination__link">3</a>
           </li>
           <li class="catalog-pagination__item">
-            <a href="#" class="catalog-pagination__link catalog-pagination__next">Следующая</a>
+            <a href="#" class="catalog-pagination__link catalog-pagination__link--next">Следующая</a>
           </li>
         </ul>
       </section>
